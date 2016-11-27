@@ -1,0 +1,89 @@
+body {
+    color: white;
+    background: url('../../image/index/背景2.png') no-repeat center;
+    background-color: black;
+    background-size: auto 100%;
+}
+button{
+	font-weight:bold;
+}
+a:link {
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: none;
+}
+
+
+/* 头部导航条 */
+
+.head {
+    margin-left: 5%;
+    height: 20%;
+}
+
+
+/* 头部导航条链接 */
+
+.head-link {
+    font-size: 120%;
+    height: 50%;
+    margin-top: 3%;
+    margin-right: 10%;
+    display: inline;
+    float: right;
+}
+
+
+/* 商家LOGO */
+
+.LOGO {
+    width: 10%;
+    height: 100%;
+}
+
+
+/* 尾巴链接区域 */
+
+.tail {
+    text-align: center;
+    width: 100%;
+    height: 25%;
+    margin-top: 25%;
+}
+
+
+/* 搜索栏 */
+
+.search-bar {
+    display: inline;
+}
+
+.search-box {
+    width: 30%;
+}
+
+
+/* 底部链接区域 */
+
+.tail_link {
+    margin: auto 0;
+    width: 100%;
+    height: 46%;
+    margin-top: 3%;
+    font-size: 150%;
+    padding-left: 5%;
+}
+
+.tail_link a {
+    margin-right: 5%;
+}
