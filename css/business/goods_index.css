@@ -3,7 +3,7 @@ body {
     min-height: 600px;
     min-width: 600px;
     height: 1100px;
-    background-color:#F7F7F7;
+    background-color:#FFFFCC;
     /* overflow: hidden; */
 }
 
@@ -80,7 +80,9 @@ body {
 .filter a{
 	color:gray;
 }
-
+.filter a:hover{
+    color:red;
+}
 /* 商家列表 */
 
 .business_listings {
