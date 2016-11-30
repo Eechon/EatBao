@@ -37,6 +37,13 @@ body {
     height: 57%;
     text-align: center;
 }
+.greetings a{
+    color:blue;
+    text-decoration:none;
+}
+.greetings a:hover{
+    color:orange;
+}
 
 .content{
 	width:100%;
