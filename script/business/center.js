@@ -37,7 +37,11 @@ function tiaozhuan() {
 }
 // 店铺订单
 function all_order() {
-    table.innerHTML = table.innerHTML;
+    $(document).ready(function(){
+   
+        $("#1").load("/orders/shop/1");
+    
+});
 }
 // 未接订单
 function open_order() {
