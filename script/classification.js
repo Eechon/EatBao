@@ -1,7 +1,4 @@
 
-
-
-
 $(function(){
 	 $.get("http://localhost:9001/classification/all", function(result){
 		
