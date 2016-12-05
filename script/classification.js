@@ -1,6 +1,6 @@
 
 $(function(){
-	 $.get("http://localhost:9001/classification/all", function(result){
+	 $.get(baseUrl + "/classification/all", function(result){
 		
 		result.resultParm.classificationList.forEach((classification)=>{
 			console.log(classification);
