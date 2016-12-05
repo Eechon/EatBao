@@ -39,7 +39,7 @@ function tiaozhuan() {
 // 未接订单
 function open_order() {
     var table_title = document.getElementById("title1");
-    table_title.innerHTML = "带评价订单";
+    table_title.innerHTML = "待评价订单";
 
     var i = 0;
     var j = 0;
