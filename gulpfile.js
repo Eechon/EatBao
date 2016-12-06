@@ -4,6 +4,7 @@ var connect = require('gulp-connect');
 
 //创建watch任务去检测html文件,其定义了当html改动之后，去调用一个Gulp的Task
 gulp.task('watch', function () {
+	gulp.watch(['./*.html'], ['html']);
     gulp.watch(['./*/*.html'], ['html']);
 });
 
