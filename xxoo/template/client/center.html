@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>吃货宝</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../css/client/customer_center.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/client/customer_center.css">
 </head>
 
 <body>
     <div id="content">
         <div class="head">
             <div class="logo">
-                <a href="goods_index.html"><img src="../../image/index/LOGO.png" alt="" /></a>
+                <a href="/template/business/goods_index.html"><img src="../../image/index/LOGO.png" alt="" /></a>
             </div>
             <div style="width:30%;height:100%;text-align: center;font-size:2em;color: red;margin-left: 21%;min-width:300px;float: left;line-height: 4;"><span>个人中心</span></div>
             <!-- 问候语 -->
@@ -30,7 +30,7 @@
             <div class="order_list">
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
-                    <div class="panel-heading" style="text-align: center;font-size:1.8em;" id="title1">订单汇总</div>
+                    <div class="panel-heading" style="text-align: center;font-size:1.8em;" id="title">订单汇总</div>
                     <!-- Table -->
                     <table class="table" style="text-align: center;" id="list">
                         <tr class="active">
@@ -49,7 +49,7 @@
                             <td>2016-11-11</td>
                             <td><a href="">订单详情</a>
                                 <br>
-                                <button class="btn btn-warning btn1">删除</button>
+                                <button class="btn btn-warning delete-btn">删除</button>
                             </td>
                         </tr>
                         <tr class="warning">
@@ -60,7 +60,7 @@
                             <td>2016-11-11</td>
                             <td><a href="">订单详情</a>
                                 <br>
-                                <button class="btn btn-warning btn1">删除</button>
+                                <button class="btn btn-warning delete-btn">删除</button>
                             </td>
                         </tr>
                         <tr class="danger">
@@ -71,7 +71,7 @@
                             <td>2016-11-11</td>
                             <td><a href="">订单详情</a>
                                 <br>
-                                <button class="btn btn-warning btn1">删除</button>
+                                <button class="btn btn-warning delete-btn">删除</button>
                             </td>
                         </tr>
                         <tr class="info">
@@ -82,7 +82,7 @@
                             <td>2016-11-11</td>
                             <td><a href="">订单详情</a>
                                 <br>
-                                <button class="btn btn-warning btn1">删除</button>
+                                <button class="btn btn-warning delete-btn">删除</button>
                             </td>
                         </tr>
                     </table>
@@ -100,6 +100,8 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="/script/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="/script/baseconst.js"></script>
         <script type="text/javascript" src="/script/client/customer_center.js"></script>
 </body>
 
