@@ -1,5 +1,5 @@
 .modal-content {
-    background: url(../images/bg.png) black repeat;
+    background: url(../images/bg.png) rgb(253, 120, 0) repeat;
     background-size:100% 100%;
 }
 
@@ -9,7 +9,7 @@
     padding: 2em;
 }
 p{
-	color:white;
+	color:black;
 }
 h4.modal-title {
     font-size: 2.5em;
@@ -17,7 +17,7 @@ h4.modal-title {
     text-align: center;
 }
 .about h4{
-	color:white;
+	color:black;
 }
 .modal-body.modal-spa {
     padding: 0 1em 2em;
@@ -25,7 +25,7 @@ h4.modal-title {
 
 .about h3 {
     font-size: 2em;
-    color:white;
+    color:black;
 }
 
 .about-left img {
@@ -52,7 +52,7 @@ ul.address li {
 ul.address li ul.agileits-address-text li {
     display: inline-block;
     font-size: 1.2em;
-    color: #fff;
+    color: black;
     margin-top: 1em;
     font-weight: 100;
 }
@@ -62,7 +62,7 @@ ul.address li ul.agileits-address-text li:nth-child(1) {
 }
 
 ul.address li ul.agileits-address-text li a {
-    color: #fff;
+    color: black;
     text-decoration: none;
 }
 
