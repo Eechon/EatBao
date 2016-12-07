@@ -14,6 +14,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         font-family: 'OpenSans-Regular';
         src:url(../fonts/OpenSans-Regular.ttf) format('truetype');
     }
+    p{
+        color:black;
+    }
 /*-- Fonts --*/
 
 /*-- Reset Code --*/
@@ -44,7 +47,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 /*-- Index-Page-Styling --*/
 
 body {
-	background: url("../images/bg.jpg");
+    background:linear-gradient(white,orange,white);
+	/* background: url("../images/bg.jpg"); */
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -106,8 +110,12 @@ h1 {
 
 .items {
     padding: 20px 10px;
-    background-color: #ffffff;
+    background-color: orange;
     border-radius: 5px;
+    background: linear-gradient();
+}
+.items p{
+    color:black;
 }
 
 .item1, .item2, .item3 {
@@ -186,11 +194,12 @@ p {
 }
 
 .checkout {
-    background-color: #FFF;
+    background-color: orange;
     border-radius: 5px;
     padding: 20px;
     text-align: center;
 }
+
 .discount {
     width: 50%;
     float: left;
