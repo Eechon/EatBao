@@ -45,7 +45,7 @@
 	</head>
 
 	<body>
-		<div class="navbar navbar-default" id="navbar">
+	<div class="navbar navbar-default" id="navbar">
 			<script type="text/javascript">
 				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
 			</script>
@@ -333,6 +333,18 @@
 
 									<div class="space-6"></div>
 
+<div class="modal-body">
+										<div id="mybox" style="width:1000px;height:500px;display:none;background: #ccc;z-index: 5000;">
+											
+										</div>
+										<button id="mybtn">显示</button>	
+									<script type="text/javascript">
+										
+
+									</script>
+
+
+
 									<h2>地址</h2>
 									<!-- 按钮触发模态框 -->
 									<button class="btn btn-primary btn-lg" data-toggle="modal"
@@ -354,6 +366,18 @@
 											新的地址
 										</h4>
 									</div>
+<<<<<<< HEAD:admin/myhtml.html
+
+
+
+
+
+										
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+										data-dismiss="modal">关闭
+=======
 									<div class="modal-body">
 										<!-- 内容 -->
 										<html>
@@ -431,6 +455,7 @@
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default"
 											data-dismiss="modal">关闭
+>>>>>>> 3555c01472a449067c0effca7be6690fbce425a5:admin/address.html
 									</button>
 									<button type="button" class="btn btn-primary">
 										确定添加地址
@@ -533,6 +558,9 @@
 					$(this).sparkline('html', {tagValuesAttribute:'data-values', type: 'bar', barColor: barColor , chartRangeMin:$(this).data('min') || 0} );
 				});
 			
+			
+			
+			
 			  var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
 			  var data = [
 				{ label: "social networks",  data: 38.7, color: "#68BC31"},
@@ -623,6 +651,10 @@
 					else $(this).closest('li').removeClass('selected');
 				});
 			})
+$("#mybtn").click(function(){
+											$("#mybox").show();
+
+										});
 		</script>
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 
