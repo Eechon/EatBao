@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>遮罩层</title>
+    <style type="text/css">
+    .mask {
+        position: absolute;
+        top: 0px;
+        background-color: #777;
+        z-index: 1000;
+        left: 10px;
+        opacity: 0.5;
+        display:none;
+        display: ;
+    }
+    </style>
+    <script type="text/javascript">
+    function hidemask() {
+        $("#mask").hide();
+    }
+
+    function showmask() {
+        // body...
+        $("#mask").css("height", $(document).height());
+        $("#mask").css("width", $(document).width());
+        $("#mask").show();
+    }
+    </script>
+</head>
+
+<body>
+    <div id="mask" class="mask">ssssss</div>
+    <a href="" onclick="showmask()">点我</a>
+</body>
+
+</html>
