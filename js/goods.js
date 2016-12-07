@@ -25,10 +25,11 @@ $(function(){
 	 	goods.id = $("#goodsId").val();
 	 	goods.number = $('#goodsNumber').val();
 		goods.price = $('#price').val();
+		goods.name = $("#goodsName").text();
 		console.log(goods);
 	 	var goodsList = eval(localStorage.getItem("goodsList"));
 	 	
-		if(goodsList == null){
+		if(goodsList == null){ 
 	 		goodsList = [];
 	 	}
 
