@@ -12,7 +12,7 @@ $(function(){
 				$($(".container")[1]).append(block);
 				//block = $("<div class='offer-bottom' style='margin-bottom:30px' ></div>");
 			}
-			block.append('<div class="col-md-3 offer-left"><a href="goods.html"><img src="images/o-5.jpg" alt=""/></a><h4><a href="goods.html">'+goods.name+'</a></h4><p><h3>￥'+goods.price+'</h3></p><div class="o-btn"><a href="goods.html">购买</a></div></div>');
+			block.append('<div class="col-md-3 offer-left"><a href="goods.html"><img src="images/o-5.jpg" alt=""/></a><h4><a href="goods.html">'+goods.name+'</a></h4><p><h3>￥'+goods.price+'</h3></p><div class="o-btn"><a data-toggle="modal" data-target="#modal">购买</a></div></div>');
 			if(count%4 ==3){
 				block.append('<div class="clearfix"> </div>');
 			}

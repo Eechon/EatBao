@@ -427,13 +427,6 @@
 													</div>
 												</div>
 											</div>
-
-											
-
-
-
-
-											
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default"
@@ -508,9 +501,6 @@
 		<script src="assets/js/jquery.slimscroll.min.js"></script>
 		<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
 		<script src="assets/js/jquery.sparkline.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.pie.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.resize.min.js"></script>
 
 		<!-- ace scripts -->
 
@@ -554,45 +544,6 @@
 				{ label: "direct traffic",  data: 18.6, color: "#DA5430"},
 				{ label: "other",  data: 10, color: "#FEE074"}
 			  ]
-			  function drawPieChart(placeholder, data, position) {
-			 	  $.plot(placeholder, data, {
-					series: {
-						pie: {
-							show: true,
-							tilt:0.8,
-							highlight: {
-								opacity: 0.25
-							},
-							stroke: {
-								color: '#fff',
-								width: 2
-							},
-							startAngle: 2
-						}
-					},
-					legend: {
-						show: true,
-						position: position || "ne", 
-						labelBoxBorderColor: null,
-						margin:[-30,15]
-					}
-					,
-					grid: {
-						hoverable: true,
-						clickable: true
-					}
-				 })
-			 }
-			 drawPieChart(placeholder, data);
-			
-			 /**
-			 we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
-			 so that's not needed actually.
-			 */
-			 placeholder.data('chart', data);
-			 placeholder.data('draw', drawPieChart);
-			
-			
 			
 			  var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
 			  var previousPoint = null;
@@ -612,11 +563,6 @@
 				
 			 });
 			
-			
-			
-			
-			
-			
 				var d1 = [];
 				for (var i = 0; i < Math.PI * 2; i += 0.5) {
 					d1.push([i, Math.sin(i)]);
@@ -632,35 +578,7 @@
 					d3.push([i, Math.tan(i)]);
 				}
 				
-			
 				var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
-				$.plot("#sales-charts", [
-					{ label: "Domains", data: d1 },
-					{ label: "Hosting", data: d2 },
-					{ label: "Services", data: d3 }
-				], {
-					hoverable: true,
-					shadowSize: 0,
-					series: {
-						lines: { show: true },
-						points: { show: true }
-					},
-					xaxis: {
-						tickLength: 0
-					},
-					yaxis: {
-						ticks: 10,
-						min: -2,
-						max: 2,
-						tickDecimals: 3
-					},
-					grid: {
-						backgroundColor: { colors: [ "#fff", "#fff" ] },
-						borderWidth: 1,
-						borderColor:'#555'
-					}
-				});
-			
 			
 				$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
 				function tooltip_placement(context, source) {
@@ -676,12 +594,10 @@
 					return 'left';
 				}
 			
-			
+
 				$('.dialogs,.comments').slimScroll({
 					height: '300px'
 			    });
-				
-				
 				//Android's default browser somehow is confused when tapping on label which will lead to dragging the task
 				//so disable dragging when clicking on label
 				var agent = navigator.userAgent.toLowerCase();
@@ -692,7 +608,6 @@
 					var label = li.find('label.inline').get(0);
 					if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
 				});
-			
 				$('#tasks').sortable({
 					opacity:0.8,
 					revert:true,
@@ -710,13 +625,11 @@
 					if(this.checked) $(this).closest('li').addClass('selected');
 					else $(this).closest('li').removeClass('selected');
 				});
-				
-			
 			})
 		</script>
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 
-	<script type="text/javascript" src="admin/assets/js/connect/index.js"></script>
+	<script type="text/javascript" src="assets/js/connect/index.js"></script>
 </body>
 </html>
 
