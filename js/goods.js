@@ -11,7 +11,7 @@ $(function(){
 				$($(".container")[1]).append(block);
 				//block = $("<div class='offer-bottom' style='margin-bottom:30px' ></div>");
 			}
-			block.append('<div class="col-md-3 offer-left"><a href="goods.html"><img src="images/o-5.jpg" alt=""/></a><h4><a href="goods.html">'+goods.name+'</a></h4><p><h3>￥'+goods.price+'</h3></p><div class="o-btn"><a id="buy" data-toggle="modal" data-target="#modal" onclick="showText('+'\''+goods.name+'\''+','+goods.id+')">购买</a></div></div>');
+			block.append('<div class="col-md-3 offer-left"><a href="goods.html"><img src="images/o-5.jpg" alt=""/></a><h4><a href="goods.html">'+goods.name+'</a></h4><p><h3>￥'+goods.price+'</h3></p><div class="o-btn"><a id="buy" data-toggle="modal" data-target="#modal" onclick="showText('+'\''+goods.name+'\''+','+goods.id+','+goods.price+','+goods.image+')">购买</a></div></div>');
 			if(count%4 ==3){
 				block.append('<div class="clearfix"> </div>');
 			}
@@ -19,13 +19,12 @@ $(function(){
 		});
 	});
 
-
 	 $("#confirm").on("click",()=>{
 	 	console.log("xxoo");
 		var goods = {};
 	 	goods.id = $("#goodsId").val();
 	 	goods.number = $('#goodsNumber').val();
-		
+		goods.price = $('#price').val();
 		console.log(goods);
 	 	var goodsList = eval(localStorage.getItem("goodsList"));
 	 	
@@ -37,7 +36,6 @@ $(function(){
 	 	// goodsList.forEach((tmpgoods)=>{
 	 	// 	console.log(goods);
 	 	// 	if(tmpgoods.id ==goods.id){
-
 	 	// 	}
 	 	// });
 
@@ -51,12 +49,12 @@ $(function(){
 		$('#goodsNumber').val(0);
 	 	$("#modal").modal("hide");
 	 });
-
 });
 
-function showText(name,id){
+function showText(name,id,price,img){
 	console.log("clicking me");
 	console.log(id);
 	$('#goodsName').text(name);
 	$("#goodsId").val(id);
+	$("#price").val(price);
 }
