@@ -16,6 +16,23 @@ $(function(){
 	});
 
 	 $(".total2").text("￥"+total);
+
+	 $("#confirm").on("click",()=>{
+
+	 	var goodsList = eval(localStorage.getItem("goodsList"));
+	 	var param = {};
+	 	param.addressId = 1;
+	 	param.totalPrice = 100;
+	 	param.userId = 1;
+	 	param.shopUserId = 2;
+	 	param.goodsList = JSON.stringify(goodsList);
+	 	$.post( baseUrl + "/orders/placeOrder",param,(result)=>{
+	 	console.log(result);
+	 	localStorage.removeItem("goodsList");
+	 	localStorage.setItem("goodsList",[]);
+	 	window.location.href="/zhifuyemian/index.html?ordersId="+result.resultParm.ordersId;
+	 	});
+	 });
 });
 
 function deleteDom(i){
@@ -23,8 +40,9 @@ function deleteDom(i){
 		var goodsList = eval(localStorage.getItem("goodsList"));
 		goodsList.splice(i-1,1);
 		localStorage.setItem("goodsList",JSON.stringify(goodsList));
-		countPrice(goodsList);
-		$('.close'+i).remove();
+		// countPrice(goodsList);
+		// $('.close'+i).remove();
+		window.location.href="/shoppingcar.html";
 	});
 }
 
