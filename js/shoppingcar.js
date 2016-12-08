@@ -17,8 +17,6 @@ $(function(){
 
 	 $(".total2").text("￥"+total);
 
-
-
 	 $("#confirm").on("click",()=>{
 
 	 	var goodsList = eval(localStorage.getItem("goodsList"));
@@ -32,7 +30,7 @@ $(function(){
 	 	console.log(result);
 	 	localStorage.removeItem("goodsList");
 	 	localStorage.setItem("goodsList",[]);
-	 	window.location.href="/shoppingcar.html";
+	 	window.location.href="/zhifuyemian/index.html?ordersId="+result.resultParm.ordersId;
 	 	});
 	 });
 });
