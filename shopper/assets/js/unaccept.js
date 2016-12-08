@@ -1,6 +1,6 @@
 ﻿$(function(){
 	//获得所有商家信息
-  var shopperId = 1;
+  var shopperId = 2;
   $.get(baseUrl + "/orders/shop/unwatch/"+shopperId, function(result){
 
          console.log($($("tbody")[0]));

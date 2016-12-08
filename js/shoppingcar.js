@@ -16,6 +16,25 @@ $(function(){
 	});
 
 	 $(".total2").text("￥"+total);
+
+
+
+	 $("#confirm").on("click",()=>{
+
+	 	var goodsList = eval(localStorage.getItem("goodsList"));
+	 	var param = {};
+	 	param.addressId = 1;
+	 	param.totalPrice = 100;
+	 	param.userId = 1;
+	 	param.shopUserId = 2;
+	 	param.goodsList = JSON.stringify(goodsList);
+	 	$.post( baseUrl + "/orders/placeOrder",param,(result)=>{
+	 	console.log(result);
+	 	localStorage.removeItem("goodsList");
+	 	localStorage.setItem("goodsList",[]);
+	 	window.location.href="/shoppingcar.html";
+	 	});
+	 });
 });
 
 function deleteDom(i){

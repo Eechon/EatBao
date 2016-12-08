@@ -1,12 +1,13 @@
 ﻿$(function(){
+  var shopperId = 2;
 	//获得所有商家信息
-  $.get(baseUrl + "/orders/all/", function(result){
+  $.get(baseUrl + "/orders/shop/"+shopperId, function(result){
 
          console.log($($("tbody")[0]));
 
          console.log(result);
-
-         result.resultParm.ordersList.forEach((orders)=>{
+         var ordersList = result.resultParm.orderList;
+         ordersList.forEach((orders)=>{
              console.log(orders);
              $($("tbody")[0]).append($('<tr><td class="center"><label><input type="checkbox"class="ace"><span class="lbl"></span></label></td><td><a href="#">'+orders.id+'</a></td><td>'+orders.number+'</td><td>￥'+orders.totalPrice+'</td><td class="hidden-480">'+payTypeToText(orders.payType)+'</td><td>'+new Date(orders.lastModifiedDate).Format("yyyy-MM-dd")+'</td><td class="hidden-480">'+statusToText(orders.status)+'</td></tr>'));
          });
