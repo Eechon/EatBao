@@ -1,13 +1,29 @@
 ﻿$(function(){
-	$("#login").on("click",()=>{
+	var ordersId = getParam("ordersId");
+	$("#pay").on("click",()=>{
 		//13570956669
-		$.post(baseUrl+"/users/doLogin",{"account":$("#phone").val(),"password":$("#password").val()},(result)=>{
+		$.post(baseUrl+"/orders/pay/"+ordersId,(result)=>{
 			console.log(result);
-			if(null != result.resultParm.user){
-				window.location.href="/index.html";
-			}else{
-				alert("登录失败");
-			}
+			window.location.href="/index.html";
 		});
 	});
 });
+
+function getParam(paramName) {
+    paramValue = "";
+    isFound = false;
+    if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
+        arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&");
+        i = 0;
+        while (i < arrSource.length && !isFound) {
+            if (arrSource[i].indexOf("=") > 0) {
+                if (arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase()) {
+                    paramValue = arrSource[i].split("=")[1];
+                    isFound = true;
+                }
+            }
+            i++;
+        }
+    }
+    return paramValue;
+}
