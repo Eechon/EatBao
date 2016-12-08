@@ -23,8 +23,9 @@ function deleteDom(i){
 		var goodsList = eval(localStorage.getItem("goodsList"));
 		goodsList.splice(i-1,1);
 		localStorage.setItem("goodsList",JSON.stringify(goodsList));
-		countPrice(goodsList);
-		$('.close'+i).remove();
+		// countPrice(goodsList);
+		// $('.close'+i).remove();
+		window.location.href="/shoppingcar.html";
 	});
 }
 

@@ -22,7 +22,7 @@
 function acceptOrders(ordersId){
      $.post(baseUrl+"/orders/accept/"+ordersId,(result)=>{
       console.log(result);
-        alert("操作成功");
+      window.location.href="/shopper/unaccept.html";
     });
 }
 
@@ -34,7 +34,7 @@ function acceptOrders(ordersId){
 function refuseAcceptOrders(ordersId){
      $.post(baseUrl+"/orders/refuse/"+ordersId,(result)=>{
       console.log(result);
-        alert("操作成功");
+      window.location.href="/shopper/unaccept.html";
     });
 }
 
