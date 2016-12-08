@@ -41,6 +41,9 @@ body a:hover{
   border-top: 0;
   background-color: white;
 }
+.logo img{
+	width: 130px;
+}
 .navigation {
 	float: right;
 }

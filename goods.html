@@ -8,23 +8,23 @@
     <meta name="keywords" content="Fruit_Salad Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
     Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript">
-        addEventListener("load", function() {
-            setTimeout(hideURLbar, 0);
-        }, false);
+    addEventListener("load", function() {
+        setTimeout(hideURLbar, 0);
+    }, false);
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
     </script>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href='http://fonts.useso.com/css?family=Enriqueta:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.useso.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.11.0.min.js"></script>
-</script>
-<!---- start-smoth-scrolling---->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+    </script>
+    <!---- start-smoth-scrolling---->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
 </head>
 
 <body>
@@ -32,150 +32,149 @@
     <div class="header" id="home">
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="images/LOGO.png" alt="" style="width: 9%;
+                <a href="index.html"><img src="images/LOGO.png" alt="" style="
                     float: left;"></a>
-                </div>
-                <div class="navigation">
-                    <span class="menu"></span>
-                    <ul class="navig">
-                        <li><a class="active" href="index.html">首页</a><span> </span></li>
-                        <li><a href="login.html">登录</a><span> </span></li>
-                        <li><a href="register.html">注册</a><span> </span></li>
-                        <li><a href="/user/index.html">我的外卖</a><span> </span></li>
-                        <li><a href="/shopper/index.html">我的店铺</a><span> </span></li>
-                        <li><a href="/shoppingcar.html">购物车</a><span> </span></li>
-                    </ul>
-                </div>
-
-                <!-- script-for-menu -->
-                <script>
-                    $("span.menu").click(function() {
-                        $(" ul.navig").slideToggle("slow", function() {});
-                    });
-                </script>
-                <!-- script-for-menu -->
             </div>
-
+            <div class="navigation">
+                <span class="menu"></span>
+                <ul class="navig">
+                    <li><a class="active" href="index.html">首页</a><span> </span></li>
+                    <li><a href="login.html">登录</a><span> </span></li>
+                    <li><a href="register.html">注册</a><span> </span></li>
+                    <li><a href="/user/index.html">我的外卖</a><span> </span></li>
+                    <li><a href="/shopper/index.html">我的店铺</a><span> </span></li>
+                    <li><a href="/shoppingcar.html">购物车</a><span> </span></li>
+                </ul>
+            </div>
+            <!-- script-for-menu -->
+            <script>
+            $("span.menu").click(function() {
+                $(" ul.navig").slideToggle("slow", function() {});
+            });
+            </script>
+            <!-- script-for-menu -->
         </div>
-        <!----end-header---->
-        <!--offer-starts-->
-        <div class="offer" style="margin-top:50px">
-            <div class="container">
-                <!-- 模态框（Modal） -->
-                <div class="modal fade" id="modal" tabindex="-1" role="dialog"
-                aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+    <!----end-header---->
+    <!--offer-starts-->
+    <div class="offer" style="margin-top:50px">
+        <div class="container">
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close"
-                            data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
                             加入到购物车
                         </h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- 内容 -->
-                        <html>
-                        <head></head>
-                        <body>
-                            <div class="addressdialog-content">
-                                <div class="addressform">
-                                    <div>
-                                        <input type="hidden" id="goodsId" value="0"/>
-                                        <input type="hidden" id="price" value="0"/>
-                                        <div class="addressformfield phonefield">
-                                            <label>商品名:</label>
-                                            <label id="goodsName"></label>
-                                            <div class="addressformfield-hint">
-                                                <span></span>
+                        </div>
+                        <div class="modal-body">
+                            <!-- 内容 -->
+                            <html>
+
+                            <head></head>
+
+                            <body>
+                                <div class="addressdialog-content">
+                                    <div class="addressform">
+                                        <div>
+                                            <input type="hidden" id="goodsId" value="0" />
+                                            <input type="hidden" id="price" value="0" />
+                                            <div class="addressformfield phonefield">
+                                                <label>商品名:</label>
+                                                <label id="goodsName"></label>
+                                                <div class="addressformfield-hint">
+                                                    <span></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="addressformfield phonefield">
-                                            <label>购买数量:</label>
-                                            <input id="goodsNumber" value=""/>
-                                            <div class="addressformfield-hint">
-                                                <span></span>
+                                            <div class="addressformfield phonefield">
+                                                <label>购买数量:</label>
+                                                <input id="goodsNumber" value="" />
+                                                <div class="addressformfield-hint">
+                                                    <span></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="addressformfield phonebkfield" style="display: none;">
-                                            <label></label>
-                                            <input placeholder="固话、手机短号" />
-                                            <button>删除</button>
-                                            <div class="addressformfield-hint">
-                                                <span></span>
+                                            <div class="addressformfield phonebkfield" style="display: none;">
+                                                <label></label>
+                                                <input placeholder="固话、手机短号" />
+                                                <button>删除</button>
+                                                <div class="addressformfield-hint">
+                                                    <span></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default"
-                            data-dismiss="modal">关闭
-                        </button>
-                        <button id="confirm" type="button" class="btn btn-primary">
-                            确定添加
-                        </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                            </button>
+                            <button id="confirm" type="button" class="btn btn-primary">
+                                确定添加
+                            </button>
+                        </div>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal -->
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
+            </div>
         </div>
-    </div>
-    <!--offer-ends-->
-    <!--footer-->
-    <div class="footer" style="text-align: center;">
-        <div class="footer-grids">
-            <div class="container">
-                <div class="col-md-4 footer-grid">
-                    <ul>
-                        <li><a href="#"><h4>服务中心</h4></a></li>
-                        <li><a href="#">常见问题</a></li>
-                        <li><a href="#">自助服务</a></li>
-                        <li><a href="#">美食圈</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 footer-grid">
-                    <h4>合作申请</h4>
-                    <ul>
-                        <li><a href="#">我要开店</a></li>
-                        <li><a href="#">技术加盟</a></li>
-                        <li><a href="#">投资本平台</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 footer-grid contact-grid">
-                    <h4>联系我们</h4>
-                    <ul>
-                        <li><span class="c-icon"> </span>广东海洋大学</li>
-                        <li><span class="c-icon1"> </span><a href="mailto:info@example.com">mail@example.com</a></li>
-                        <li><span class="c-icon2"> </span>12345678911</li>
-                    </ul>
+        <!--offer-ends-->
+        <!--footer-->
+        <div class="footer" style="text-align: center;">
+            <div class="footer-grids">
+                <div class="container">
+                    <div class="col-md-4 footer-grid">
+                        <ul>
+                            <li><a href="#"><h4>服务中心</h4></a></li>
+                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#">自助服务</a></li>
+                            <li><a href="#">美食圈</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer-grid">
+                        <h4>合作申请</h4>
+                        <ul>
+                            <li><a href="#">我要开店</a></li>
+                            <li><a href="#">技术加盟</a></li>
+                            <li><a href="#">投资本平台</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer-grid contact-grid">
+                        <h4>联系我们</h4>
+                        <ul>
+                            <li><span class="c-icon"> </span>广东海洋大学</li>
+                            <li><span class="c-icon1"> </span><a href="mailto:info@example.com">mail@example.com</a></li>
+                            <li><span class="c-icon2"> </span>12345678911</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="copy">
-        <p>Copyright &copy; 2015.伯爵科技团队</p>
-    </div>
-    <!--/footer-->
-    <script type="text/javascript">
-        if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
-    </script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+        <div class="copy">
+            <p>Copyright &copy; 2015.伯爵科技团队</p>
+        </div>
+        <!--/footer-->
+        <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "script>");
+        </script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
         $(document).ready(function() {
 
-        $().UItoTop({
-            easingType: 'easeOutQuart'
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
         });
-    });
-    </script>
-    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-    <!--footer-ends-->
-    <script type="text/javascript" src="js/baseconst.js"></script>
-    <script type="text/javascript" src="js/goods.js"></script>
-</body>
+        </script>
+        <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        <!--footer-ends-->
+        <script type="text/javascript" src="js/baseconst.js"></script>
+        <script type="text/javascript" src="js/goods.js"></script>
+        </body>
 
-</html>
+        </html>
