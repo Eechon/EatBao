@@ -39,6 +39,7 @@ body a:hover{
   top: 0;
   border: 5px solid#EC8D24;
   border-top: 0;
+  background-color: white;
 }
 .navigation {
 	float: right;
