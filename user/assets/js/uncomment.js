@@ -1,6 +1,6 @@
 ﻿$(function(){
 	//获得所有商家信息
-  var userId = 2;
+  var userId = 1;
   $.get(baseUrl + "/orders/user/uncomment/"+userId, function(result){
 
          console.log($($("tbody")[0]));
@@ -20,22 +20,10 @@
  * @return {[type]}          [description]
  */
 function acceptOrders(ordersId){
-     $.post(baseUrl+"/orders/accept/"+ordersId,(result)=>{
-      console.log(result);
-      window.location.href="/shopper/unaccept.html";
-    });
-}
-
-/**
- * 商家拒绝接单操作
- * @param  {[type]} ordersId [description]
- * @return {[type]}          [description]
- */
-function refuseAcceptOrders(ordersId){
-     $.post(baseUrl+"/orders/refuse/"+ordersId,(result)=>{
-      console.log(result);
-      window.location.href="/shopper/unaccept.html";
-    });
+    //  $.post(baseUrl+"/orders/accept/"+ordersId,(result)=>{
+    //   console.log(result);
+    //   window.location.href="/shopper/unaccept.html";
+    // });
 }
 
 function payTypeToText(paytype){
