@@ -31,6 +31,22 @@
         <script src="assets/js/html5shiv.js"></script>
         <script src="assets/js/respond.min.js"></script>
         <![endif]-->
+    <style type="text/css">
+    .addressformfield input {
+        float: right;
+        margin-right: 54%;
+    }
+    
+    .addressformfield textarea {
+        width: 160px;
+        float: right;
+        margin-right: 54%;
+        resize:none;
+    }
+    .addressformfield label{
+        margin-left: 16px ;
+    }
+    </style>
 </head>
 
 <body>
@@ -270,24 +286,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                            </button>
+                            <button id="confirm" type="button" class="btn btn-primary">
+                                确定添加
+                            </button>
+                        </div>
                     </div>
+                    <!-- modal end -->
+                    <!-- /.col -->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button id="confirm" type="button" class="btn btn-primary">
-                        确定添加
-                    </button>
-                </div>
+                <!-- /.row -->
             </div>
-            <!-- modal end -->
-            <!-- /.col -->
+            <!-- /.page-content -->
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.page-content -->
-    </div>
-    <!-- /.main-content -->
+        <!-- /.main-content -->
     </div>
     <!-- /.main-container-inner -->
     <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
