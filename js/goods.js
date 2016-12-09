@@ -60,7 +60,7 @@ function showText(name,id,price,img){
 	$("#price").val(price);
 }
 
-function paramName) {
+function getParam(paramName) {
     paramValue = "";
     isFound = false;
     if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
