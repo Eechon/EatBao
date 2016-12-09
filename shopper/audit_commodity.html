@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <title>EatBao后台管理系统</title>
-    <meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
-    <meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- basic styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -25,6 +23,8 @@
         <![endif]-->
     <!-- inline styles related to this page -->
     <!-- ace settings handler -->
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="assets/js/ace-extra.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -169,7 +169,7 @@
                     <!-- #nav-search -->
                 </div>
                 <div class="page-content">
-                    <div class="page-header">
+                    <div class="page-header" id="header">
                         <h1 style="display: inline-block;">
                                 商品管理
                                 <small>
@@ -177,8 +177,6 @@
                                     商品列表
                                 </small>
                             </h1>
-                        <span style="float: right;margin-right: 10%;"><button class="btn btn-warning" style="outline: none;font-size: 1.2em;font-weight: bold;">添加商品</button> </span>
-
                     </div>
                     <!-- /.page-header -->
                     <div class="row">
@@ -217,6 +215,72 @@
                 <!-- /row -->
                 <!-- PAGE CONTENT ENDS -->
             </div>
+            <!-- modal -->
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                            添加商品
+                        </h4>
+                        </div>
+                        <div class="addressdialog-content">
+                            <div class="addressform">
+                                <div>
+                                    <input type="hidden" id="goodsId" value="0" />
+                                    <input type="hidden" id="price" value="0" />
+                                    <div class="addressformfield phonefield">
+                                        <label>添加商品名:</label>
+                                        <input id="goodsName" value="" />
+                                        <div class="addressformfield-hint">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="addressformfield phonefield">
+                                        <label>添加数量:</label>
+                                        <input id="goodsNumber" value="" />
+                                        <div class="addressformfield-hint">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="addressformfield phonefield">
+                                        <label>单价：</label>
+                                        <input id="goodsPrice" value="" />
+                                        <div class="addressformfield-hint">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="addressformfield phonefield">
+                                        <label>简介:</label>
+                                        <textarea id="goodsMessage"></textarea>
+                                        <div class="addressformfield-hint">
+                                        </div>
+                                    </div>
+                                    <div class="addressformfield phonebkfield" style="display: none;">
+                                        <label></label>
+                                        <input placeholder="固话、手机短号" />
+                                        <button>删除</button>
+                                        <div class="addressformfield-hint">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button id="confirm" type="button" class="btn btn-primary">
+                        确定添加
+                    </button>
+                </div>
+            </div>
+            <!-- modal end -->
             <!-- /.col -->
         </div>
         <!-- /.row -->
