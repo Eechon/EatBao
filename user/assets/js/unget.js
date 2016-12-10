@@ -22,7 +22,7 @@
 function confirmGetOrders(ordersId){
      $.post(baseUrl+"/orders/confirm/"+ordersId,(result)=>{
       console.log(result);
-      window.location.href="/shopper/goods-not-received.html";
+      window.location.href="/user/goods-not-received.html";
     });
 }
 

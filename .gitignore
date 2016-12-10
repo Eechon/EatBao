@@ -1,0 +1,15 @@
+/target/
+
+/src/main/resources/config/application.properties
+/.settings/
+/.idea/
+/.mvn/
+/.classpath
+/.project
+/carNet.iml
+/mvnw*
+/*.log*
+/re*.xml
+/src/main/webapp/QRCodeImg/*
+/node*
+/script/baseconst*
