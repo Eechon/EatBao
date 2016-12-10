@@ -25,6 +25,7 @@ $(function(){
 	 	param.totalPrice = 100;
 	 	param.userId = 1;
 	 	param.shopUserId = 2;
+	 	param.payType = $("form").serialize().split('&')[1].split('=')[1];;
 	 	param.goodsList = JSON.stringify(goodsList);
 	 	$.post( baseUrl + "/orders/placeOrder",param,(result)=>{
 	 	console.log(result);
