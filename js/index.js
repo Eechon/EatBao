@@ -27,7 +27,7 @@ $(function(){
 	 registerBusinessListener();
 });
 
-//商家认证申请
+//商家认证申请相关监听器
 function registerBusinessListener() {
 
         $('#registerBusinessForm').submit(function() {
@@ -50,8 +50,10 @@ function registerBusinessListener() {
             userId = localStorage.getItem("userId");
 
             //模拟用户Id
-            userId=123456;
+            //实际环境屏蔽用户Id
+            //userId=123456;
             if(userId == null || userId == "") {
+                alert("用户Id不能为空");
                 return false;
             } else {
                 $("#userId").val(userId);
@@ -74,6 +76,7 @@ function dealUploadResponse(responseText, statusText, xhr, $form) {
 
 	if(statusText == "success") {
 		if(responseText.serviceResult == true) {
+            $('#modal').modal('hide');
 			alert("商家认证提交成功！");
 		} else {
 			alert("商家认证提交失败！");
