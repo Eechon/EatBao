@@ -20,9 +20,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href='http://fonts.useso.com/css?family=Enriqueta:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.useso.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.form.min.js"></script>
     <!---- start-smoth-scrolling---->
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -30,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header" id="home">
         <div class="container">
             <div class="logo">
-            <div style="background-color: ">
+            <div>
                 <a href="index.html"><img src="images/LOGO.png" alt="" style="
     float: left;"></a></div>
             </div>
@@ -41,12 +43,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="login.html">登录</a><span> </span></li>
                     <li><a href="register.html">注册</a><span> </span></li>
                     <li><a href="/user/index.html">我的外卖</a><span> </span></li>
-                    <li><a href="/shopper/index.html">我的店铺</a><span> </span></li>
+                    <li><a id="businessRegister" href="/shopper/index.html">商家申请</a><span> </span></li>
                     <li><a href="/shoppingcar.html">购物车</a><span> </span></li>
 
-                </ult>
+                </ul>
             </div>
             <!-- script-for-menu -->
+
+            <!-- 模态框开始 -->
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                商家认证申请
+                            </h4>
+                        </div>
+                        <form id="registerBusinessForm" enctype="multipart/form-data" method="post" >
+                            <div class="modal-body">
+                                    <input name="userId" id="userId" type="hidden"/>
+                                    <div class="input-group" style="margin-bottom: 5px">
+                                        <span class="input-group-addon">商家认证说明：</span>
+                                        <textarea id="desc" class="form-control" placeholder="请输入认证说明" name="desc"></textarea>
+                                    </div>
+                                    <div class="input-group" style="margin-bottom: 5px">
+                                        <span class="input-group-addon">身份证正面照：</span>
+                                        <input id="frontImg" type="file"class="form-control" name="fontImg" accept="image/*"/>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">身份证反面照：</span>
+                                        <input id="backImg" type="file"class="form-control" name="backImg" accept="image/*"/>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" id="registerBusinessBtn">
+                                    提交认证
+                                </button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+            <!-- 模态框结束 -->
+
             <script>
             $("span.menu").click(function() {
                 $(" ul.navig").slideToggle("slow", function() {});
@@ -116,11 +158,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
     </script>
+
     <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     <!--footer-ends-->
-    </script>
-    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-    <!--footer-ends-->
+
     <script type="text/javascript" src="js/baseconst.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>

@@ -20,4 +20,103 @@ $(function(){
 			count ++;
 		});
 	});
+
+	 //根据是否为商家修改导航条
+	 changeNavByIsBusiness();
+	 //商家认证申请
+	 registerBusinessListener();
 });
+
+//商家认证申请
+function registerBusinessListener() {
+
+        $('#registerBusinessForm').submit(function() {
+            //数据完整性判定
+            if($("#desc").val() == "") {
+                alert("商家认证说明不能为空！");
+                return false;
+            }
+            if($("#frontImg").val() == "") {
+                alert("身份证正面照不能为空！");
+                return false;
+            }
+            if($("#backImg").val() == "") {
+                alert("身份证反面照不能为空！");
+                return false;
+            }
+
+            var userId = null;
+            //获取用户Id
+            userId = localStorage.getItem("userId");
+
+            //模拟用户Id
+            userId=123456;
+            if(userId == null || userId == "") {
+                return false;
+            } else {
+                $("#userId").val(userId);
+            }
+
+            var options = {
+                url:baseUrl + "/businessApply/add",
+                success: dealUploadResponse,
+                resetForm: true,
+                dataType:  'json'
+            };
+
+            $(this).ajaxSubmit(options);
+            return false;//防止刷新
+        });
+}
+
+//商家认证回调函数
+function dealUploadResponse(responseText, statusText, xhr, $form) {
+
+	if(statusText == "success") {
+		if(responseText.serviceResult == true) {
+			alert("商家认证提交成功！");
+		} else {
+			alert("商家认证提交失败！");
+		}
+	}
+}
+
+//根据是否为商家修改导航条及对应的监听事件
+function changeNavByIsBusiness() {
+
+	var userId = null;
+
+	//获取用户Id
+	userId = localStorage.getItem("userId");
+
+
+	if(userId == null || userId == "") {
+    	//存在用户Id
+        $("#businessRegister").text("商家申请");
+        $("#businessRegister").on("click",()=>{
+            //展示商家认证的蒙层
+            $('#modal').modal('show');
+            return false;
+        });
+		return;
+	} else {
+		//不存在用户Id
+        //判断是否为商家
+        $.get(baseUrl + "/shopper/isshopper/" + userId,(result)=>{
+            if(result.resultParm.status == true) {
+                $("#businessRegister").text("我的店铺");
+                $("#businessRegister").on("click",()=>{
+                    return true;
+                });
+            } else {
+                $("#businessRegister").text("商家申请");
+                $("#businessRegister").on("click",()=>{
+                    //展示商家认证的蒙层
+                    $('#modal').modal('show');
+                    return false;
+                });
+            }
+        });
+	}
+}
+
