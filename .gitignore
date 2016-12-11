@@ -13,3 +13,4 @@
 /src/main/webapp/QRCodeImg/*
 /node*
 /script/baseconst*
+/js/baseconst.js

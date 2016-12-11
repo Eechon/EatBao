@@ -243,56 +243,70 @@
                             添加商品
                         </h4>
                         </div>
-                        <div class="addressdialog-content">
+                        <form id = "addGoodsForm" enctype="multipart/form-data" method="post">
+                        <div style="height:200px;" class="addressdialog-content">
                             <div class="addressform">
-                                <div>
-                                    <input type="hidden" id="goodsId" value="0" />
-                                    <input type="hidden" id="price" value="0" />
-                                    <div class="addressformfield phonefield">
-                                        <label>添加商品名:</label>
-                                        <input id="goodsName" value="" />
-                                        <div class="addressformfield-hint">
-                                            <span></span>
+
+                                    <div>
+                                        <input type="hidden" name="shopId" value="2" />
+                                        <input type="hidden" name="classification" value="0" />
+                                        <div class="addressformfield phonefield">
+                                            <label>添加商品名:</label>
+                                            <input id="goodsName" name = "name" value="" />
+                                            <div class="addressformfield-hint">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="addressformfield phonefield">
+                                            <label>添加数量:</label>
+                                            <input id="goodsNumber" name = "number" value="" />
+                                            <div class="addressformfield-hint">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="addressformfield phonefield">
+                                            <label>默认数量:</label>
+                                            <input id="goodsDefNumber" name = "defNumber" value="" />
+                                            <div class="addressformfield-hint">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="addressformfield phonefield">
+                                            <label>单价：</label>
+                                            <input id="goodsPrice" name = "price" value="" />
+                                            <div class="addressformfield-hint">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="addressformfield phonefield">
+                                            <label>简介:</label>
+                                            <textarea id="goodsMessage" name = "introduce"></textarea>
+                                            <div class="addressformfield-hint">
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">商品图片：</span>
+                                            <input id="goodsPic" type="file"class="form-control" name="file" accept="image/*"/>
+                                        </div>
+                                        <div class="addressformfield phonebkfield" style="display: none;">
+                                            <label></label>
+                                            <input placeholder="固话、手机短号" />
+                                            <button>删除</button>
+                                            <div class="addressformfield-hint">
+                                                <span></span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="addressformfield phonefield">
-                                        <label>添加数量:</label>
-                                        <input id="goodsNumber" value="" />
-                                        <div class="addressformfield-hint">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                    <div class="addressformfield phonefield">
-                                        <label>单价：</label>
-                                        <input id="goodsPrice" value="" />
-                                        <div class="addressformfield-hint">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                    <div class="addressformfield phonefield">
-                                        <label>简介:</label>
-                                        <textarea id="goodsMessage"></textarea>
-                                        <div class="addressformfield-hint">
-                                        </div>
-                                    </div>
-                                    <div class="addressformfield phonebkfield" style="display: none;">
-                                        <label></label>
-                                        <input placeholder="固话、手机短号" />
-                                        <button>删除</button>
-                                        <div class="addressformfield-hint">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                             </button>
-                            <button id="confirm" type="button" class="btn btn-primary">
-                                确定添加
-                            </button>
+                            <input value = "确定添加" type="submit" class="btn btn-primary">
+
                         </div>
+                        </form>
                     </div>
                     <!-- modal end -->
                     <!-- /.col -->
@@ -493,6 +507,7 @@
     <div style="display:none">
         <script type="text/javascript" src="/js/baseconst.js"></script>
         <script type="text/javascript" src="assets/js/goods.js"></script>
+        <script type="text/javascript" src="../js/jquery.form.min.js"></script>
     </div>
 </body>
 

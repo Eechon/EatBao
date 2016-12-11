@@ -14,12 +14,51 @@ $(function() {
         });
     });
 
+    // 添加商品
+    addGoodsListener()
+
 });
 
     $(function(){
     $("#header").append('<span style="float: right;margin-right: 10%;"><button class="btn btn-warning" style="outline: none;font-size: 1.2em;font-weight: bold;" data-toggle="modal" data-target="#modal" onclick="addGoods()">添加商品</button> </span>');
     });
-    function addGoods() {
 
+function addGoodsListener() {
+    $("#addGoodsForm").submit(function() {
+        var goodsName = $('#goodsName').val()
+        var goodsNumber = $('#goodsNumber').val()
+        var goodsDefNumber = $('#goodsDefNumber').val()
+        var goodsPrice = $('#goodsPrice').val()
+        var goodsMessage = $('#goodsMessage').val()
+
+        // todo: 数据校验
+
+        alert("1..");
+        if (goodsName != null && goodsName != "") {
+            alert("2..");
+            var options = {
+                url:baseUrl + "/goods/add",
+                success: dealUploadResponse,
+                resetForm: true,
+                dataType:  'json'
+            };
+
+            $(this).ajaxSubmit(options)
+            return false;
+        }
+        return false;//防止刷新
+    });
+}
+
+//商家认证回调函数
+function dealUploadResponse(responseText, statusText, xhr, $form) {
+
+    if(statusText == "success") {
+        if(responseText.serviceResult == true) {
+            alert("添加成功！");
+        } else {
+            alert("添加失败！");
+        }
     }
+}
 
