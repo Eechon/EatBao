@@ -1,6 +1,7 @@
 $(function(){
+
 	//获得所有商家信息
-  $.get(baseUrl + "/shopper/all/", function(result){
+  $.get(baseUrl + "/shopper/all", function(result){
 
          console.log($($("tbody")[0]));
 

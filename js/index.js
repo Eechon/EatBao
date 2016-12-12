@@ -23,25 +23,51 @@ $(function(){
 
 	 //根据是否为商家修改导航条
 	 changeNavByIsBusiness();
-	 //商家认证申请
+	 //商家认证申请相关监听器
 	 registerBusinessListener();
 });
 
-//商家认证申请相关监听器
+/**
+ * 商家认证申请相关监听器
+ */
 function registerBusinessListener() {
 
+        //获取短信验证码按钮监听器
+        $("#getCheckCode").on("click",() => {
+            $("#getCheckCode").attr({"disabled":"disabled"});
+
+            var contact = $("#contact").val();
+
+            if(contact == "") {
+                alert("手机号码不能为空！");
+                $("#getCheckCode").removeAttr("disabled");
+                return false;
+            }
+
+            if (!contact.match(/^1[34578]\d{9}$/)) {
+                alert("手机号码格式不正确！");
+                $("#getCheckCode").removeAttr("disabled");
+                return false;
+            }
+
+            $.post(baseUrl + "/verifycode/getCode",{"contact":contact},(result)=>{
+                if(result.serviceResult) {
+                    alert("短信验证码发送成功！");
+                } else {
+                    alert("短信验证码发送失败！");
+                }
+
+                $("#getCheckCode").removeAttr("disabled");
+            });
+        });
+
+        //商家认证按钮监听器
         $('#registerBusinessForm').submit(function() {
-            //数据完整性判定
-            if($("#desc").val() == "") {
-                alert("商家认证说明不能为空！");
-                return false;
-            }
-            if($("#frontImg").val() == "") {
-                alert("身份证正面照不能为空！");
-                return false;
-            }
-            if($("#backImg").val() == "") {
-                alert("身份证反面照不能为空！");
+
+            $("#registerBusinessBtn").attr({"disabled":"disabled"});
+            //表单校验
+            if(!validataRegisterBusinessForm()) {
+                $("#registerBusinessBtn").removeAttr("disabled");
                 return false;
             }
 
@@ -49,18 +75,16 @@ function registerBusinessListener() {
             //获取用户Id
             userId = localStorage.getItem("userId");
 
-            //模拟用户Id
-            //实际环境屏蔽用户Id
-            //userId=123456;
             if(userId == null || userId == "") {
                 alert("用户Id不能为空");
+                $("#registerBusinessBtn").removeAttr("disabled");
                 return false;
             } else {
                 $("#userId").val(userId);
             }
 
             var options = {
-                url:baseUrl + "/businessApply/add",
+                url:baseUrl + "/shopper/add",
                 success: dealUploadResponse,
                 resetForm: true,
                 dataType:  'json'
@@ -71,7 +95,56 @@ function registerBusinessListener() {
         });
 }
 
-//商家认证回调函数
+/**
+ * 表单验证
+ * @returns {boolean}
+ */
+function validataRegisterBusinessForm() {
+    //数据完整性判定
+    if($("#introduction").val() == "") {
+        alert("商家认证说明不能为空！");
+        return false;
+    }
+    if($("#name").val() == "") {
+        alert("真实姓名不能为空！");
+        return false;
+    }
+    var contact = $("#contact").val();
+    if(contact == "") {
+        alert("手机号码不能为空！");
+        return false;
+    }
+    if (!contact.match(/^1[34578]\d{9}$/)) {
+        alert("手机号码格式不正确！");
+        return false;
+    }
+    if($("#checkCode").val() == "") {
+        alert("验证码不能为空！");
+        return false;
+    }
+    if($("#address").val() == "") {
+        alert("商家地址不为空！");
+        return false;
+    }
+    if($("#frontImg").val() == "") {
+        alert("身份证正面照不能为空！");
+        return false;
+    }
+    if($("#backImg").val() == "") {
+        alert("身份证反面照不能为空！");
+        return false;
+    }
+
+    return true;
+}
+
+/**
+ * 商家认证回调函数
+ * @param responseText
+ * @param statusText
+ * @param xhr
+ * @param $form
+ */
 function dealUploadResponse(responseText, statusText, xhr, $form) {
 
 	if(statusText == "success") {
@@ -81,42 +154,37 @@ function dealUploadResponse(responseText, statusText, xhr, $form) {
 		} else {
 			alert("商家认证提交失败！");
 		}
+        $("#registerBusinessBtn").removeAttr("disabled");
 	}
 }
 
-//根据是否为商家修改导航条及对应的监听事件
+/**
+ * 根据是否为商家修改导航条及对应的监听事件
+ */
 function changeNavByIsBusiness() {
+
+    //存在用户Id
+    $("#businessRegister").text("商家申请");
+    $("#businessRegister").on("click",()=>{
+        //展示商家认证的蒙层
+        $('#modal').modal('show');
+        return false;
+    });
 
 	var userId = null;
 
 	//获取用户Id
 	userId = localStorage.getItem("userId");
 
-
-	if(userId == null || userId == "") {
-    	//存在用户Id
-        $("#businessRegister").text("商家申请");
-        $("#businessRegister").on("click",()=>{
-            //展示商家认证的蒙层
-            $('#modal').modal('show');
-            return false;
-        });
-		return;
-	} else {
-		//不存在用户Id
+	if(userId != null || userId != "") {
+		//存在用户Id
         //判断是否为商家
         $.get(baseUrl + "/shopper/isshopper/" + userId,(result)=>{
-            if(result.resultParm.status == true) {
+            if(result.serviceResult == true) {
+                $("#businessRegister").unbind();
                 $("#businessRegister").text("我的店铺");
                 $("#businessRegister").on("click",()=>{
                     return true;
-                });
-            } else {
-                $("#businessRegister").text("商家申请");
-                $("#businessRegister").on("click",()=>{
-                    //展示商家认证的蒙层
-                    $('#modal').modal('show');
-                    return false;
                 });
             }
         });
