@@ -1,12 +1,14 @@
-﻿$(function(){
+﻿var pingpp = require('pingpp-js');
+
+$(function(){
 	var ordersId = getParam("ordersId");
-	$("#pay").on("click",()=>{
-		//13570956669
-		$.post(baseUrl+"/orders/pay/"+ordersId,(result)=>{
-			console.log(result);
-			window.location.href="/index.html";
-		});
-	});
+	$("#pay").onclick(function () {
+        // $.post(baseUrl+"/orders/pay/"+ordersId,(result)=>{
+        //     console.log(result);
+        // window.location.href="/index.html";
+
+        console.log('pay!!!')
+    });
 });
 
 function getParam(paramName) {
@@ -26,4 +28,31 @@ function getParam(paramName) {
         }
     }
     return paramValue;
+}
+
+function payOrder() {
+    console.log("payorder!!!")
+
+    $.post(baseUrl + '/orders/pay',
+        {
+            "ordersId" : 4,
+            "payWay" : "alipay_pc_direct",
+            "client_ip" : "192.168.137.100"
+        },
+        function (data) {
+            console.log(data.resultParm.charge)
+            pingpp.createPayment(data.resultParm.charge, function(result, err){
+                console.log("result", result);
+                console.log("err.msg", err.msg);
+                console.log("err.extra", err.extra);
+                if (result == "success") {
+                    // 只有微信公众账号 wx_pub 支付成功的结果会在这里返回，其他的支付结果都会跳转到 extra 中对应的 URL。
+                } else if (result == "fail") {
+                    // charge 不正确或者微信公众账号支付失败时会在此处返回
+                } else if (result == "cancel") {
+                    // 微信公众账号支付取消支付
+                }
+            });
+        }
+    );
 }
