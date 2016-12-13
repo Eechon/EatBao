@@ -33,19 +33,28 @@
         <![endif]-->
     <style type="text/css">
     .addressformfield input {
-        float: right;
-        margin-right: 54%;
+        /*float: right;*/
+        width: 150px;
+        margin-left: 5px;
+        margin-right: 30px;
+        margin-top: 10px;
     }
     
     .addressformfield textarea {
-        width: 160px;
-        float: right;
-        margin-right: 54%;
+        margin-left: 5px;
         resize:none;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     .addressformfield label{
-        margin-left: 16px ;
+        width:80px;
+        margin-left: 20px ;
     }
+        .addressformfield span{
+            width : 100px;
+            margin-right:30%;
+            color:red;
+        }
     </style>
 </head>
 
@@ -244,7 +253,7 @@
                         </h4>
                         </div>
                         <form id = "addGoodsForm" enctype="multipart/form-data" method="post">
-                        <div style="height:200px;" class="addressdialog-content">
+                        <div style="height:280px;" class="addressdialog-content">
                             <div class="addressform">
 
                                     <div>
@@ -253,34 +262,25 @@
                                         <div class="addressformfield phonefield">
                                             <label>添加商品名:</label>
                                             <input id="goodsName" name = "name" value="" />
-                                            <div class="addressformfield-hint">
-                                                <span></span>
-                                            </div>
                                         </div>
-                                        <div class="addressformfield phonefield">
+                                        <div class="addressformfield">
                                             <label>添加数量:</label>
-                                            <input id="goodsNumber" name = "number" value="" />
-                                            <div class="addressformfield-hint">
-                                                <span></span>
-                                            </div>
+                                            <input onblur="verifyNumParam(this.value, 'goodsNumberSpan')" id="goodsNumber" name = "number" value="" />
+                                            <span id="goodsNumberSpan"></span>
                                         </div>
-                                        <div class="addressformfield phonefield">
+                                        <div class="addressformfield">
                                             <label>默认数量:</label>
-                                            <input id="goodsDefNumber" name = "defNumber" value="" />
-                                            <div class="addressformfield-hint">
-                                                <span></span>
-                                            </div>
+                                            <input id="goodsDefNumber" onblur="verifyNumParam(this.value, 'goodsDefNumberSpan')" name = "defNumber" value="" />
+                                            <span id="goodsDefNumberSpan"></span>
                                         </div>
-                                        <div class="addressformfield phonefield">
+                                        <div class="addressformfield">
                                             <label>单价：</label>
-                                            <input id="goodsPrice" name = "price" value="" />
-                                            <div class="addressformfield-hint">
-                                                <span></span>
-                                            </div>
+                                            <input id="goodsPrice" onblur="verifyNumParam(this.value, 'goodsPriceSpan')" name = "price" value="" />
+                                            <span id="goodsPriceSpan"></span>
                                         </div>
                                         <div class="addressformfield phonefield">
                                             <label>简介:</label>
-                                            <textarea id="goodsMessage" name = "introduce"></textarea>
+                                            <textarea cols="50" rows="4" id="goodsMessage" name = "introduce"></textarea>
                                             <div class="addressformfield-hint">
                                             </div>
                                         </div>

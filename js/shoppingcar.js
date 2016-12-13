@@ -31,7 +31,11 @@ $(function(){
 	 	console.log(result);
 	 	localStorage.removeItem("goodsList");
 	 	localStorage.setItem("goodsList",[]);
-	 	window.location.href="/zhifuyemian/index.html?ordersId="+result.resultParm.ordersId;
+		if(result.resultParm.ordersId != null){
+			window.location.href="/zhifuyemian/index.html?ordersId="+result.resultParm.ordersId;
+		}else{
+			alert(result.resultInfo);
+		}
 	 	});
 	 });
 });
