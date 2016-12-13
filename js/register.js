@@ -1,10 +1,5 @@
 $(function() {
     // 获取验证码
-    $.get(baseUrl + "/verifycode/code/"+$("#phone").val(), (result) => {
-        console.log(result);
-        localStorage.setItem("yanzhengma", result.resultInfo);
-        $("#yanzhengma").text(localStorage.getItem("yanzhengma"));
-    });
 
     $("#huoqu").on("click", () => {
     $.get(baseUrl + "/verifycode/code/"+$("#phone").val(), (result) => {
