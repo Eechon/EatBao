@@ -150,6 +150,8 @@ function dealUploadResponse(responseText, statusText, xhr, $form) {
 	if(statusText == "success") {
 		if(responseText.serviceResult == true) {
             $('#modal').modal('hide');
+            //认证成功修改认证按钮
+            changeNavByIsBusiness();
 			alert("商家认证提交成功！");
 		} else {
 			alert("商家认证提交失败！");
@@ -179,13 +181,21 @@ function changeNavByIsBusiness() {
 	if(userId != null || userId != "") {
 		//存在用户Id
         //判断是否为商家
-        $.get(baseUrl + "/shopper/isshopper/" + userId,(result)=>{
+        $.get(baseUrl + "/shopper/getBusinessStatus",{"userId":userId},(result)=>{
             if(result.serviceResult == true) {
-                $("#businessRegister").unbind();
-                $("#businessRegister").text("我的店铺");
-                $("#businessRegister").on("click",()=>{
-                    return true;
-                });
+                if(result.resultParm.status == 1) {
+                    $("#businessRegister").unbind();
+                    $("#businessRegister").on("click",()=>{
+                        alert("商家认证已申请，请等待管理员审核");
+                        return false;
+                    });
+                } else if(result.resultParm.status == 2) {
+                    $("#businessRegister").unbind();
+                    $("#businessRegister").text("我的店铺");
+                    $("#businessRegister").on("click",()=>{
+                        return true;
+                    });
+                }
             }
         });
 	}

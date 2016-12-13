@@ -358,7 +358,6 @@
 								</div>
 								<!-- 修改点：；一个搜索栏 -->
 
-
 								<div class="row">
 									<div class="col-xs-12">
 										<h3 class="header smaller lighter blue">商家信息表</h3>
@@ -372,15 +371,15 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>商家名字</th>
+														<th>商家姓名</th>
 														<th>商店地址</th>
-														<th class="hidden-480">商家简介</th>
+														<th class="hidden-480">手机号码</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															最近更新时间
 														</th>
-														<th class="hidden-480">商家状态</th>
+														<th class="hidden-480">认证状态</th>
 														<th>
 															操作
 														</th>
@@ -394,14 +393,66 @@
 										</div>
 									</div>
 								</div><!-- PAGE CONTENT ENDS -->
+
+								<!--审核信息详情模态框开始-->
+								<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+													&times;
+												</button>
+												<h4 class="modal-title" id="myModalLabel">
+													商家认证详情
+												</h4>
+											</div>
+											<div class="modal-body">
+												<input name="userId" id="userId" type="hidden"/>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">认证说明：</span>
+													<textarea id="introduction" class="form-control" name="introduction" readonly="readonly"></textarea>
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">真实姓名：</span>
+													<input id="name" class="form-control" readonly="readonly"/>
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">手机号码：</span>
+													<input id="contact" type="text" class="form-control" readonly="readonly" />
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">商家地址：</span>
+													<input id="address" class="form-control" readonly="readonly" />
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">认证状态：</span>
+													<input id="status" class="form-control" readonly="readonly" />
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">证件正面：</span>
+													<img id="fontImg" class="img-responsive" alt="身份证正面" style="height: 150px">
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">证件反面：</span>
+													<img id="backImg"class="img-responsive" alt="身份证反面" style="height: 150px">
+												</div>
+											</div>
+											<div id="deal" class="modal-footer">
+												<button id="reject" type="button" class="btn btn-default">
+													审核驳回
+												</button>
+												<button id="pass" type="button" class="btn btn-primary">
+													审核通过
+												</button>
+											</div>
+										</div><!-- /.modal-content -->
+									</div><!-- /.modal -->
+								</div>
+								<!--审核信息详情模态框结束-->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
-
-<!-- 修改点：增加了一个table -->
-
-
 								</div><!-- /row -->
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
