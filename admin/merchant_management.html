@@ -45,26 +45,64 @@
 	</head>
 
 	<body>
-		<div class="navbar navbar-default" id="navbar" style="height: 100px;
-    background: orange;">
-        <script type="text/javascript">
-        try {
-            ace.settings.check('navbar', 'fixed')
-        } catch (e) {}
-        </script>
-        <div class="navbar-container" id="navbar-container">
-            <div class="navbar-header pull-left">
-                <a href="/index.html"><img src="../images/LOGO.png" style="width: 8%;
-    margin-left: 6%;"></a>
-            </div>
-            <!-- /.navbar-header -->
-                <span style="float: right;margin-right: 50px;font-size: 2em;margin-top: -70px;"><a href="/user-message.html" style="color: white;text-decoration: none;">我的资料</a></span>
-            
-            <!-- /.navbar-header -->
-        </div>
-        <!-- /.container -->
-    </div>
+		<div class="navbar navbar-default" id="navbar">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
 
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand">
+						<small>
+							<i class="icon-leaf"></i>
+							EatBao Admin
+						</small>
+					</a><!-- /.brand -->
+				</div><!-- /.navbar-header -->
+
+				<div class="navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<!-- 导航栏个人信息菜单 -->
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									<small>欢迎光临,</small>
+									王纸张
+								</span>
+
+								<i class="icon-caret-down"></i>
+							</a>
+
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="icon-cog"></i>
+										设置
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="icon-user"></i>
+										个人资料
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="#">
+										<i class="icon-off"></i>
+										退出
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul><!-- /.ace-nav -->
+				</div><!-- /.navbar-header -->
+			</div><!-- /.container -->
+		</div>
 
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
@@ -94,50 +132,139 @@
 						</div>
 					</div><!-- #sidebar-shortcuts -->
 
-					 <!-- 侧边栏 -->
-                <ul class="nav nav-list">
-                    <li class="active">
-                        <a href="index.html">
-                            <i class="icon-dashboard"></i>
-                            <span class="menu-text"> 起始页 </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="all-order.html">
-                            <i class="icon-desktop"></i>
-                            <span class="menu-text"> 全部订单 </span>
-                        </a>
-                    </li>
-                    <!-- 商品 -->
-                    <li>
-                        <a href="expect_comment.html">
-                            <i class="icon-desktop"></i>
-                            <span class="menu-text"> 待评价订单 </span>
-                        </a>
-                    </li>
-                    <!-- 订单 -->
-                    
-                    <!-- 未收货订单 -->
-                    <li>
-                        <a href="goods-not-received.html">
-                            <i class="icon-desktop"></i>
-                            <span class="menu-text">待收货订单</span>
-                        </a>
-                    </li>
-                       <li>
-                        <a href="expect_comment.html">
-                            <i class="icon-desktop"></i>
-                            <span class="menu-text"> 待评价订单 </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="back.html">
-                            <i class="icon-desktop"></i>
-                            <span class="menu-text"> 退单记录 </span>
-                        </a>
-                    </li>
-                   
-                </ul>
+					<!-- 侧边栏 -->
+					<ul class="nav nav-list">
+						<li class="active">
+							<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> 起始页 </span>
+							</a>
+						</li>
+
+						<!-- 商家 -->
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text"> 商家管理 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+							<ul class="submenu">
+								<li>
+									<a href="merchant_management.html">
+										<i class="icon-double-angle-right"></i>
+										商家列表
+									</a>
+								</li>
+
+								<li>
+									<a href="merchant_information.html">
+										<i class="icon-double-angle-right"></i>
+										商家信息
+									</a>
+								</li>
+
+								<li>
+									<a href="merchantgoods_list.html">
+										<i class="icon-double-angle-right"></i>
+										商家商品列表
+									</a>
+								</li>
+							</ul>
+						</li>
+						
+						<!-- 商品 -->
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text"> 商品管理 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="audit_commodity.html">
+										<i class="icon-double-angle-right"></i>
+										待审核商品
+									</a>
+								</li>
+
+								<li>
+									<a href="commodity_information.html">
+										<i class="icon-double-angle-right"></i>
+										查看商品信息
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- 订单 -->
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text"> 订单管理 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="order_list.html">
+										<i class="icon-double-angle-right"></i>
+										订单列表
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- 用户 -->
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text"> 用户管理 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="user_list.html">
+										<i class="icon-double-angle-right"></i>
+										用户列表
+									</a>
+								</li>
+							</ul>
+						</li>
+	
+						<!-- 权限 -->
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text"> 权限管理 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="manager_list.html">
+										<i class="icon-double-angle-right"></i>
+										管理员列表
+									</a>
+								</li>
+
+								<li>
+									<a href="role_list.html">
+										<i class="icon-double-angle-right"></i>
+										角色管理
+									</a>
+								</li>
+							</ul>
+						</li>
+						
+					</ul><!-- /.nav-list -->
+
 					<!-- 侧边栏缩进 -->
 					<div class="sidebar-collapse" id="sidebar-collapse">
 						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
@@ -155,7 +282,18 @@
 							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 						</script>
 
-						
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							
+							<li>
+								<a href="#">商家管理</a>
+							</li>
+
+							<li class="active">商家列表</li>
+						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">
 							<form class="form-search">
@@ -169,21 +307,35 @@
 
 					<div class="page-content">
 						<div class="page-header">
-							
+							<h1>
+								商家管理
+								<small>
+									<i class="icon-double-angle-right"></i>
+									商家列表
+								</small>
+							</h1>	
 						</div><!-- /.page-header -->
 
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 
-								
+								<div class="alert alert-block alert-success">
+									<button type="button" class="close" data-dismiss="alert">
+										<i class="icon-remove"></i>
+									</button>
+
+									<i class="icon-ok green"></i>
+									欢迎使用
+									<strong class="green">
+										EatBao后台管理系统
+										<small>(v1.0)</small>
+									</strong>	
+								</div>
+
 								<div class="row" style="margin-left: 10%;">
-									<form class="form-search"><span style="font-size: 1.2em;">关键字:</span>
-										<span class="input-icon">
-											<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-											<i class="icon-search nav-search-icon"></i>
-										</span>
-										<span>审核状态：</span>	
+									<form class="form-search">
+										<span>审核状态：</span>
 										<div class="btn-group">
 											<button type="button" class="dropdown-toggle" data-toggle="dropdown" style="height: 30px;border-radius:10px;background-color: white;">未审核 <span class="caret"></span>
 											</button>
@@ -193,6 +345,12 @@
 												<li><a href="#">未通过</a></li>
 											</ul>
 										</div>
+										<span style="font-size: 1.2em;">关键字:</span>
+										<span class="input-icon">
+											<input type="text" placeholder="Search ..." class="nav-search-input"  autocomplete="off" />
+											<i class="icon-search nav-search-icon"></i>
+										</span>
+
 										<div class="btn-group">
 											<button style="height: 30px;border-radius:10px;background-color: white;">搜索</button>
 										</div>
@@ -200,9 +358,9 @@
 								</div>
 								<!-- 修改点：；一个搜索栏 -->
 
-
 								<div class="row">
 									<div class="col-xs-12">
+										<h3 class="header smaller lighter blue">商家信息表</h3>
 										<div class="table-responsive">
 											<table id="sample-table-2" class="table table-striped table-bordered table-hover">
 												<thead>
@@ -213,16 +371,18 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>商家名字</th>
+														<th>商家姓名</th>
 														<th>商店地址</th>
-														<th class="hidden-480">商家简介</th>
+														<th class="hidden-480">手机号码</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															最近更新时间
 														</th>
-														<th class="hidden-480">商家状态</th>
-														<th></th>
+														<th class="hidden-480">认证状态</th>
+														<th>
+															操作
+														</th>
 													</tr>
 												</thead>
 
@@ -232,127 +392,67 @@
 											</table>
 										</div>
 									</div>
-								</div>
+								</div><!-- PAGE CONTENT ENDS -->
 
-								<div id="modal-table" class="modal fade" tabindex="-1">
+								<!--审核信息详情模态框开始-->
+								<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 									<div class="modal-dialog">
 										<div class="modal-content">
-											<div class="modal-header no-padding">
-												<div class="table-header">
-													<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-														<span class="white">&times;</span>
-													</button>
-													Results for "Latest Registered Domains
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+													&times;
+												</button>
+												<h4 class="modal-title" id="myModalLabel">
+													商家认证详情
+												</h4>
+											</div>
+											<div class="modal-body">
+												<input name="userId" id="userId" type="hidden"/>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">认证说明：</span>
+													<textarea id="introduction" class="form-control" name="introduction" readonly="readonly"></textarea>
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">真实姓名：</span>
+													<input id="name" class="form-control" readonly="readonly"/>
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">手机号码：</span>
+													<input id="contact" type="text" class="form-control" readonly="readonly" />
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">商家地址：</span>
+													<input id="address" class="form-control" readonly="readonly" />
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">认证状态：</span>
+													<input id="status" class="form-control" readonly="readonly" />
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">证件正面：</span>
+													<img id="fontImg" class="img-responsive" alt="身份证正面" style="height: 150px">
+												</div>
+												<div class="input-group" style="margin-bottom: 5px">
+													<span class="input-group-addon">证件反面：</span>
+													<img id="backImg"class="img-responsive" alt="身份证反面" style="height: 150px">
 												</div>
 											</div>
-
-											<div class="modal-body no-padding">
-												<table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
-													<thead>
-														<tr>
-															<th>商家名字</th>
-															<th>商店地址</th>
-															<th>商家简介</th>
-
-															<th>
-																<i class="icon-time bigger-110"></i>
-																最近更新时间
-															</th>
-														</tr>
-													</thead>
-
-													<tbody>
-														<tr>
-															<td>
-																<a href="#">ace.com</a>
-															</td>
-															<td>$45</td>
-															<td>3,330</td>
-															<td>Feb 12</td>
-														</tr>
-
-														<tr>
-															<td>
-																<a href="#">base.com</a>
-															</td>
-															<td>$35</td>
-															<td>2,595</td>
-															<td>Feb 18</td>
-														</tr>
-
-														<tr>
-															<td>
-																<a href="#">max.com</a>
-															</td>
-															<td>$60</td>
-															<td>4,400</td>
-															<td>Mar 11</td>
-														</tr>
-
-														<tr>
-															<td>
-																<a href="#">best.com</a>
-															</td>
-															<td>$75</td>
-															<td>6,500</td>
-															<td>Apr 03</td>
-														</tr>
-
-														<tr>
-															<td>
-																<a href="#">pro.com</a>
-															</td>
-															<td>$55</td>
-															<td>4,250</td>
-															<td>Jan 21</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-
-											<div class="modal-footer no-margin-top">
-												<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
-													<i class="icon-remove"></i>
-													Close
+											<div id="deal" class="modal-footer">
+												<button id="reject" type="button" class="btn btn-default">
+													审核驳回
 												</button>
-
-												<ul class="pagination pull-right no-margin">
-													<li class="prev disabled">
-														<a href="#">
-															<i class="icon-double-angle-left"></i>
-														</a>
-													</li>
-
-													<li class="active">
-														<a href="#">1</a>
-													</li>
-
-													<li>
-														<a href="#">2</a>
-													</li>
-
-													<li>
-														<a href="#">3</a>
-													</li>
-
-													<li class="next">
-														<a href="#">
-															<i class="icon-double-angle-right"></i>
-														</a>
-													</li>
-												</ul>
+												<button id="pass" type="button" class="btn btn-primary">
+													审核通过
+												</button>
 											</div>
 										</div><!-- /.modal-content -->
-									</div><!-- /.modal-dialog -->
-								</div><!-- PAGE CONTENT ENDS -->
+									</div><!-- /.modal -->
+								</div>
+								<!--审核信息详情模态框结束-->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
-
-<!-- 修改点：增加了一个table -->
-
-
 								</div><!-- /row -->
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
@@ -375,8 +475,8 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<![endif]-->
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<![endif]-->
 
 		<!--[if !IE]> -->
 
@@ -387,10 +487,10 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
-</script>
-<![endif]-->
+			<script type="text/javascript">
+			 window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+			</script>
+		<![endif]-->
 
 		<script type="text/javascript">
 			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
@@ -540,8 +640,9 @@
 	<div style="display:none">
 	<script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
 	<script type="text/javascript" src="/js/baseconst.js"></script>
-	<script src='assets/js/orders.js'></script>
+	<script src='assets/js/shopper.js'></script>
 	</div>
+	
 </body>
 </html>
 
