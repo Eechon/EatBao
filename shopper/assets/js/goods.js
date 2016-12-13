@@ -31,11 +31,7 @@ function addGoodsListener() {
         var goodsPrice = $('#goodsPrice').val()
         var goodsMessage = $('#goodsMessage').val()
 
-        // todo: 数据校验
-
-        alert("1..");
         if (goodsName != null && goodsName != "") {
-            alert("2..");
             var options = {
                 url:baseUrl + "/goods/add",
                 success: dealUploadResponse,
@@ -61,4 +57,3 @@ function dealUploadResponse(responseText, statusText, xhr, $form) {
         }
     }
 }
-
