@@ -31,13 +31,14 @@ function getParam(paramName) {
 }
 
 function payOrder() {
-    console.log("payorder!!!")
-
+    console.log("payOrder")
+    var orderId = getParam("ordersId");
+    // var orderId = 4
     $.post(baseUrl + '/orders/pay',
         {
-            "ordersId" : 4,
+            "ordersId" : orderId,
             "payWay" : "alipay_pc_direct",
-            "client_ip" : "192.168.137.100"
+            "client_ip" : "127.0.0.1"
         },
         function (data) {
             console.log(data.resultParm.charge)

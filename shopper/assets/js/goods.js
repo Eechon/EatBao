@@ -57,22 +57,3 @@ function dealUploadResponse(responseText, statusText, xhr, $form) {
         }
     }
 }
-
-/**
- * 校验请求参数
- * @param goodsDefNumber
- * @param goodsNumber
- * @param goodsPrice
- */
-function verifyNumParam(value, identifier) {
-    console.log("verifyParam", value , identifier)
-    if (value == null || value == "") {
-        $("#"+identifier).text("不能为空")
-    } else if (isNaN(value)) {
-        $("#"+identifier).text("请输入有效数字")
-    } else if (value < 0) {
-        $("#"+identifier).text("不能小于0")
-    } else {
-        $("#"+identifier).text("")
-    }
-}
