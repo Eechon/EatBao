@@ -27,6 +27,11 @@ $(function(){
 		goods.price = $('#price').val();
 		goods.name = $("#goodsName").text();
 		console.log(goods);
+
+		if(goods.number <= 0 ){
+			alert("添加商品失败，商品数量不合法");
+		}
+
 	 	var goodsList = eval(localStorage.getItem("goodsList"));
 	 	
 		if(goodsList == null){ 
@@ -77,4 +82,11 @@ function getParam(paramName) {
         }
     }
     return paramValue;
+}
+
+function checkparam() {
+	if($("#goodsNumber").val() < 0){
+		$("#goodsNumber").val(0);
+	}
+
 }
