@@ -1,5 +1,4 @@
 $(function() {
-    var a;
     // 获取验证码
     $.get(baseUrl + "/verifycode/code/"+$("#phone").val(), (result) => {
         console.log(result);
@@ -47,6 +46,7 @@ $(function() {
                 "verifycode": userVeriFycode
             },
             function(result) {
+                alert("123");
                 if(result.serviceResult) {
                     alert("注册成功");
                     window.location.href="/login.html";
