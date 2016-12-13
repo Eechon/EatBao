@@ -5,8 +5,8 @@
  */
 function getOrderInfo() {
     // 获取订单信息
-    // var orderId = getParam("ordersId");
-    var orderId = 4;
+    var orderId = getParam("ordersId");
+    // var orderId = 4;
     var reqUrl = baseUrl + '/orders/ordersInfo/' + orderId
     $.get(reqUrl, function (data) {
         console.log("ordersInfo", data)
