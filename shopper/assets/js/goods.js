@@ -7,7 +7,7 @@ $(function() {
         window.location.href = 'http://localhost:8080/login.html'
     }
 
-    $("#shopId").val(shopperId)
+    $("#shopId").val(shopId)
     //获得所有商家信息
     $.get(baseUrl + "/goods/shop/" + shopperId, function(result) {
 
