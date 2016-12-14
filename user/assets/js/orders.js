@@ -1,5 +1,5 @@
 ﻿$(function(){
-  var userId = 1;
+  var userId = localStorage.getItem("userId");
 	//获得所有商家信息
   $.get(baseUrl + "/orders/user/"+userId, function(result){
 

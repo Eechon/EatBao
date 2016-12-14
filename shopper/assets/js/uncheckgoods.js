@@ -1,7 +1,7 @@
 ﻿
 $(function() {
-    var shopId = localStorage.getItem("userId")
-    console.log("shopId", shopId)
+    var shopId = localStorage.getItem("userId");
+    console.log("shopId", shopId);
 
     if(shopId == null || shopId == '') {
         window.location.href = 'http://localhost:8080/login.html'
@@ -9,7 +9,7 @@ $(function() {
 
     $("#shopId").val(shopId)
     //获得所有商家信息
-    $.get(baseUrl + "/goods/shop/waitcheck/" + shopId, function(result) {
+    $.get(baseUrl + "/goods/shop/" + shopId, function(result) {
 
         console.log($($("tbody")[0]));
 
