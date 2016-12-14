@@ -1,4 +1,4 @@
-﻿$(function(){
+$(function(){
 	//获取未审核商品
   $.get(baseUrl + "/goods/waitcheck/", function(result){
 

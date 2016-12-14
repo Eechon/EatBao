@@ -51,7 +51,7 @@ $(function(){
 	 	localStorage.removeItem("goodsList");
 	 	console.log(JSON.stringify(goodsList));
 	 	localStorage.setItem("goodsList",JSON.stringify(goodsList));
-
+	 	localStorage.setItem("shopId", getParam("shopId"));
 		$('#goodsNumber').val(0);
 	 	$("#modal").modal("hide");
 	 });
