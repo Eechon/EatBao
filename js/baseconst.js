@@ -1,5 +1,5 @@
 
-baseUrl = "http://192.168.137.1:9001";
+baseUrl = "http://192.168.31.57:9001";
 
 
 // 对Date的扩展，将 Date 转化为指定格式的String
@@ -12,8 +12,7 @@ Date.prototype.Format = function(fmt)
 { //author: meizz   
   var o = {   
     "M+" : this.getMonth()+1,                 //月份   
-    "d+" : this
-        .getDate(),                    //日
+    "d+" : this.getDate(),                    //日
     "h+" : this.getHours(),                   //小时   
     "m+" : this.getMinutes(),                 //分   
     "s+" : this.getSeconds(),                 //秒   
