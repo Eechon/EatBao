@@ -1,11 +1,5 @@
 $(function() {
-    var a;
     // 获取验证码
-    $.get(baseUrl + "/verifycode/code/"+$("#phone").val(), (result) => {
-        console.log(result);
-        localStorage.setItem("yanzhengma", result.resultInfo);
-        $("#yanzhengma").text(localStorage.getItem("yanzhengma"));
-    });
 
     $("#huoqu").on("click", () => {
     $.get(baseUrl + "/verifycode/code/"+$("#phone").val(), (result) => {
@@ -47,6 +41,7 @@ $(function() {
                 "verifycode": userVeriFycode
             },
             function(result) {
+                alert("123");
                 if(result.serviceResult) {
                     alert("注册成功");
                     window.location.href="/login.html";

@@ -118,7 +118,7 @@ p.footer a:hover{
 	transition: all 0.3s ease-out;
 	text-transform:capitalize;
 	display: inline-block;
-    margin: 0 4%;
+    margin: 0 40%;
     float: left;
     width: 17%;
 }
@@ -169,6 +169,7 @@ li.resp-tab-item span .pic1,li.resp-tab-item span .pic2,li.resp-tab-item span .p
 }
 li.resp-tab-item.resp-tab-active span label {
     border: 1px solid #B3E03F;
+    height: 60px;
 }
 .payment-info h3{
     font-size: 26px;
@@ -647,6 +648,7 @@ transition:0.5s all;
 	}
 	.resp-tab-item {
 		font-size: 13px;
+        margin-le
 	}
 	.payment-info form input[type="submit"] {
 		font-size: 14px;
@@ -868,4 +870,15 @@ transition:0.5s all;
 	p.footer {
 		margin: 20px auto 0 auto;
 	}
+}
+
+.lTitle {
+    width:100px;
+    margin-right: 10px;
+}
+
+#pay {
+    width:100px;
+    height:40px;
+    margin-left:38%;
 }

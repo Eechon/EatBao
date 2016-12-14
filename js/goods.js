@@ -11,7 +11,7 @@ $(function(){
 				$($(".container")[1]).append(block);
 				//block = $("<div class='offer-bottom' style='margin-bottom:30px' ></div>");
 			}
-			block.append('<div class="col-md-3 offer-left"><a href="goods.html"><img src="images/o-5.jpg" alt=""/></a><h4><a href="goods.html">'+goods.name+'</a><span style="font-size:18px">      剩余数量:'+goods.number+'</span></h4><p><h3>￥'+goods.price+'</h3></p><div class="o-btn"><a id="buy" data-toggle="modal" data-target="#modal" onclick="showText('+'\''+goods.name+'\''+','+goods.id+','+goods.price+','+goods.image+')">购买</a></div></div>');
+			block.append('<div class="col-md-3 offer-left"><a href="goods.html"><img src="'+baseUrl +'/' +goods.goodImg+'" alt=""/></a><h4><a href="goods.html">'+goods.name+'</a><span style="font-size:18px">      剩余数量:'+goods.number+'</span></h4><p><h3>￥'+goods.price+'</h3></p><div class="o-btn"><a id="buy" data-toggle="modal" data-target="#modal" onclick="showText('+'\''+goods.name+'\''+','+goods.id+','+goods.price+','+goods.image+')">购买</a></div></div>');
 			if(count%4 ==3){
 				block.append('<div class="clearfix"> </div>');
 			}

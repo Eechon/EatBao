@@ -1,33 +1,36 @@
 ﻿var pingpp = require('pingpp-js');
 
-$(function(){
-	var ordersId = getParam("ordersId");
-	$("#pay").onclick(function () {
-        // $.post(baseUrl+"/orders/pay/"+ordersId,(result)=>{
-        //     console.log(result);
-        // window.location.href="/index.html";
+/**
+ * 获取订单详情
+ */
+function getOrderInfo() {
+    // 获取订单信息
+    var orderId = getParam("ordersId");
+    // var orderId = 4;
+    var reqUrl = baseUrl + '/orders/ordersInfo/' + orderId
+    $.get(reqUrl, function (data) {
+        console.log("ordersInfo", data)
+        var items = data.resultParm.orderDetailList
+        var order = data.resultParm.order
 
-        console.log('pay!!!')
+        $("#orderId").text(order.id)
+        $("#orderTotalPrice").text(order.totalPrice)
+        $("#orderCreateTime").text(new Date(order.createdDate).Format("yyyy-MM-dd"))
+        $("#orderAddress").text(order.address)
+        $("#orderContact").text(order.name)
+        $("#orderPhone").text(order.phone)
+
+        // 商品
+        items.forEach(function (good) {
+            console.log("item",good);
+            $($("tbody")[0]).append($('<tr>' +
+                '<td class="col-md-4">' + good.goodName + '</td>' +
+                '<td class="col-md-2">' + good.price + '</td>' +
+                '<td class="col-md-3">' + good.number + '</td>' +
+                '<td class="col-md-3">' + good.totalPrice + '</td>' +
+                '</tr>'));
+        })
     });
-});
-
-function getParam(paramName) {
-    paramValue = "";
-    isFound = false;
-    if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
-        arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&");
-        i = 0;
-        while (i < arrSource.length && !isFound) {
-            if (arrSource[i].indexOf("=") > 0) {
-                if (arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase()) {
-                    paramValue = arrSource[i].split("=")[1];
-                    isFound = true;
-                }
-            }
-            i++;
-        }
-    }
-    return paramValue;
 }
 
 function payOrder() {
