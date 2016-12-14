@@ -1,6 +1,6 @@
 ﻿$(function(){
 	//获取未审核商品
-  $.get(baseUrl + "/goods/waitcheck/", function(result){
+  $.get(baseUrl + "/goods/shop/" + localStorage.getItem("userId"), function(result){
 
          console.log($($("tbody")[0]));
 
