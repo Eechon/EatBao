@@ -1,6 +1,6 @@
 ﻿$(function(){
 	//获得所有商家信息
-  var userId = 1;
+  var userId = localStorage.getItem("userId");
   $.get(baseUrl + "/orders/user/uncomment/"+userId, function(result){
 
          console.log($($("tbody")[0]));

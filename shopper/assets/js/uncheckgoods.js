@@ -1,7 +1,7 @@
 ﻿
 $(function() {
-    var shopId = localStorage.getItem("userId")
-    console.log("shopId", shopId)
+    var shopId = localStorage.getItem("userId");
+    console.log("shopId", shopId);
 
     if(shopId == null || shopId == '') {
         window.location.href = 'http://localhost:8080/login.html'
