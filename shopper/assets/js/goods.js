@@ -9,7 +9,7 @@ $(function() {
 
     $("#shopId").val(shopId)
     //获得所有商家信息
-    $.get(baseUrl + "/goods/shop/" + shopperId, function(result) {
+    $.get(baseUrl + "/goods/shop/" + shopId, function(result) {
 
         console.log($($("tbody")[0]));
 
