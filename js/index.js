@@ -2,7 +2,7 @@
 
 $(function(){	
      //获得商家
-	 $.get(baseUrl + "/shop/all", (result)=>{
+	 $.get(baseUrl + "/shop/online/all", (result)=>{
 		 var block;
 		 var count = 0;
 		result.resultParm.shopList.forEach((shop)=>{
