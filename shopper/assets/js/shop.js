@@ -1,13 +1,13 @@
 ﻿$(function(){
 	//获得所有商家信息
-  var shopperId = 2;
+  var shopperId = localStorage.getItem("userId");
   $.get(baseUrl + "/shop/getShop/"+shopperId, function(result){
   
 		var shop = result.resultParm.shop;
 		console.log(shop);
 		$("#shopName").val(shop.shopName);
-		$("#openTime").val(shop.openTime);
-		$("#stopTime").val(shop.stopTime);
+		$("#openTime").val(shop.openTime.replace('-',':'));
+		$("#stopTime").val(shop.stopTime.replace('-',':'));
 		$("#distributionFee").val(shop.distributionFee);
 		$("#startingPrice").val(shop.startingPrice);
 		$("#license").val(shop.license);
@@ -20,8 +20,8 @@
 		
 		$("#shopId").val(shopperId);
 		$("#shopName2").val(shop.shopName);
-		$("#openTime2").val(shop.openTime);
-		$("#stopTime2").val(shop.stopTime);
+		$("#openTime2").val(shop.openTime.replace('-',':'));
+		$("#stopTime2").val(shop.stopTime.replace('-',':'));
 		$("#distributionFee2").val(shop.distributionFee);
 		$("#startingPrice2").val(shop.startingPrice);
 		$("#license2").val(shop.license);
@@ -48,14 +48,21 @@ function registerBusinessListener() {
 		$("#online2").attr("checked");
         //商家认证按钮监听器
 var formData = new FormData();
+var status ;
+if($("#online2").get(0).checked){
+	status = 2;
+}else {
+	status = 1;
+}
 
 formData.append("id",$("#shopId").val());
 formData.append("shopName",$("#shopName2").val());
-formData.append("openTime",$("#openTime2").val());
-formData.append("stopTime",$("#stopTime2").val());
+formData.append("openTime",$("#openTime2").val().replace(':','-'));
+formData.append("stopTime",$("#stopTime2").val().replace(':','-'));
 formData.append("distributionFee", $("#distributionFee2").val());
 formData.append("startingPrice",$("#startingPrice2").val());
 formData.append("license",$("#license2").val());
+formData.append("status",status);
 formData.append("file",$("#shopImg2")[0].files[0]);
 
 $.ajax({ 
