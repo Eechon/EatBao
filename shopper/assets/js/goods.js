@@ -1,6 +1,13 @@
 ﻿
 $(function() {
-    var shopperId = 2;
+    var shopId = localStorage.getItem("userId")
+    console.log("shopId", shopId)
+
+    if(shopId == null || shopId == '') {
+        window.location.href = 'http://localhost:8080/login.html'
+    }
+
+    $("#shopId").val(shopperId)
     //获得所有商家信息
     $.get(baseUrl + "/goods/shop/" + shopperId, function(result) {
 
