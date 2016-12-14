@@ -12,7 +12,7 @@
 		$("#startingPrice").val(shop.startingPrice);
 		$("#license").val(shop.license);
 		$("#shopImg").attr("src",baseUrl + shop.shopImg);
-		if(shop.status == 2){
+		if(shop.status == 1){
 		$("#online").attr("checked",true);
 		}else{
 		$("#online").attr("checked",false);
@@ -26,7 +26,7 @@
 		$("#startingPrice2").val(shop.startingPrice);
 		$("#license2").val(shop.license);
 		
-		if(shop.status == 2){
+		if(shop.status == 1){
 		$("#online2").attr("checked",true);
 		}else{
 		$("#online2").attr("checked",false);
@@ -50,9 +50,9 @@ function registerBusinessListener() {
 var formData = new FormData();
 var status ;
 if($("#online2").get(0).checked){
-	status = 2;
-}else {
 	status = 1;
+}else {
+	status = 2;
 }
 
 formData.append("id",$("#shopId").val());
@@ -83,6 +83,7 @@ console.log("成功"+responseStr);
 }else{
 console.log("失败");
 }
+window.location.href="/shopper/shop.html";
 }, 
 error : function(responseStr) { 
 console.log("error");
