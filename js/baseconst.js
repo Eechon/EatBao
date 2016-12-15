@@ -1,5 +1,5 @@
 
-baseUrl = "http://192.168.137.1:9001";
+baseUrl = "http://172.16.8.168:9001";
 
 
 // 对Date的扩展，将 Date 转化为指定格式的String
@@ -25,5 +25,5 @@ Date.prototype.Format = function(fmt)
   for(var k in o)   
     if(new RegExp("("+ k +")").test(fmt))   
   fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
-  return fmt;   
+  return fmt;
 }  
