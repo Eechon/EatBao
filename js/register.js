@@ -41,12 +41,16 @@ $(function() {
                 "verifycode": userVeriFycode
             },
             function(result) {
-                alert("123");
                 if(result.serviceResult) {
                     alert("注册成功");
                     window.location.href="/login.html";
+                
                 } else {
                     alert(result.resultInfo);
+                    $("#phone").val("");
+                    $("#password").val("");
+                    $("#verifycode").val("");
+
                 }
             });
         });

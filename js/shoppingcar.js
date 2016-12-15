@@ -23,8 +23,8 @@ $(function(){
 	 	var param = {};
 	 	param.addressId = 1;
 	 	param.totalPrice = 100;
-	 	param.userId = 1;
-	 	param.shopUserId = 2;
+	 	param.userId = localStorage.getItem("userId");
+	 	param.shopUserId = localStorage.getItem("shopId");
 	 	param.payType = $("form").serialize().split('&')[1].split('=')[1];;
 	 	param.goodsList = JSON.stringify(goodsList);
 	 	$.post( baseUrl + "/orders/placeOrder",param,(result)=>{
